@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MediCare AI — Your 24/7 intelligent healthcare support assistant. Get instant help with appointments, billing, prescriptions, and more." />
+  <meta name="keywords" content="healthcare support, medical assistant, patient support, healthcare chatbot" />
+  <title>MediCare AI — Healthcare Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="12" fill="url(#brandGrad)"/>
+            <path d="M20 10v20M10 20h20" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="brandGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#06b6d4"/>
+                <stop offset="1" stop-color="#0284c7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">MediCare AI</span>
+          <span class="brand-tagline">Support Center</span>
+        </div>
+      </div>
+      <button class="sidebar-toggle" id="sidebarClose" aria-label="Close sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-section-label">Quick Topics</p>
+      <nav class="quick-topics" id="quickTopics">
+        <button class="topic-btn" data-topic="appointments">
+          <span class="topic-icon">📅</span>
+          <span>Appointments</span>
+        </button>
+        <button class="topic-btn" data-topic="billing">
+          <span class="topic-icon">💳</span>
+          <span>Billing & Insurance</span>
+        </button>
+        <button class="topic-btn" data-topic="prescriptions">
+          <span class="topic-icon">💊</span>
+          <span>Prescriptions</span>
+        </button>
+        <button class="topic-btn" data-topic="records">
+          <span class="topic-icon">📋</span>
+          <span>Medical Records</span>
+        </button>
+        <button class="topic-btn" data-topic="technical">
+          <span class="topic-icon">🖥️</span>
+          <span>Technical Support</span>
+        </button>
+        <button class="topic-btn" data-topic="refunds">
+          <span class="topic-icon">↩️</span>
+          <span>Refunds & Cancellations</span>
+        </button>
+        <button class="topic-btn" data-topic="account">
+          <span class="topic-icon">👤</span>
+          <span>Account & Profile</span>
+        </button>
+        <button class="topic-btn" data-topic="emergency">
+          <span class="topic-icon">🆘</span>
+          <span>Emergency Contacts</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-section-label">Support Info</p>
+      <div class="support-info-card">
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <div>
+            <p class="info-label">Support Hours</p>
+            <p class="info-value">24/7 AI Support<br/>Mon–Fri 8AM–8PM (Human)</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📧</span>
+          <div>
+            <p class="info-label">Email Support</p>
+            <p class="info-value">support@medicare-ai.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <div>
+            <p class="info-label">Phone</p>
+            <p class="info-value">1-800-MED-CARE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>AI Support Online</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CHAT AREA ===== -->
+  <main class="chat-main" id="chatMain">
+
+    <!-- Top Bar -->
+    <header class="chat-topbar">
+      <div class="topbar-left">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="agent-info">
+          <div class="agent-avatar">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="18" cy="18" r="18" fill="url(#agentGrad)"/>
+              <circle cx="18" cy="14" r="5" fill="white" fill-opacity="0.9"/>
+              <path d="M8 28c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" stroke-opacity="0.9"/>
+              <defs>
+                <linearGradient id="agentGrad" x1="0" y1="0" x2="36" y2="36">
+                  <stop stop-color="#06b6d4"/>
+                  <stop offset="1" stop-color="#0e7490"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="online-dot"></span>
+          </div>
+          <div class="agent-details">
+            <span class="agent-name">MediCare AI Assistant</span>
+            <span class="agent-status">
+              <span class="typing-indicator hidden" id="typingIndicator">
+                <span></span><span></span><span></span>
+              </span>
+              <span id="statusText">Online • Ready to help</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn" id="clearChatBtn" title="Clear chat" aria-label="Clear chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+        </button>
+        <button class="icon-btn" id="escalateBtn" title="Talk to human agent" aria-label="Escalate to human">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Chat Messages -->
+    <section class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Chat messages">
+      <!-- Welcome message injected by JS -->
+    </section>
+
+    <!-- Suggested Actions -->
+    <div class="suggestions-bar" id="suggestionsBar">
+      <button class="suggestion-chip" data-msg="What are your support hours?">🕐 Support hours</button>
+      <button class="suggestion-chip" data-msg="I need help with my bill">💳 Billing help</button>
+      <button class="suggestion-chip" data-msg="How do I reschedule an appointment?">📅 Reschedule</button>
+      <button class="suggestion-chip" data-msg="I want to speak to a human agent">👤 Human agent</button>
+      <button class="suggestion-chip" data-msg="How do I access my medical records?">📋 Medical records</button>
+    </div>
+
+    <!-- Input Area -->
+    <footer class="chat-input-area">
+      <div class="input-wrapper">
+        <button class="attach-btn" id="attachBtn" aria-label="Attach file" title="Attach file">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
+        </button>
+        <textarea
+          id="chatInput"
+          class="chat-input"
+          placeholder="Type your message here..."
+          rows="1"
+          maxlength="2000"
+          aria-label="Chat message input"
+        ></textarea>
+        <div class="input-actions">
+          <span class="char-count" id="charCount">0/2000</span>
+          <button class="send-btn" id="sendBtn" aria-label="Send message" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="input-disclaimer">AI responses are informational only. For medical emergencies, call <strong>911</strong>.</p>
+    </footer>
+
+  </main>
+
+  <!-- ===== ESCALATION MODAL ===== -->
+  <div class="modal-overlay hidden" id="escalationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <h2 class="modal-title" id="modalTitle">Connect with a Specialist</h2>
+          <p class="modal-subtitle">We'll connect you with a human support agent</p>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form class="modal-form" id="escalationForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="escName">Full Name *</label>
+            <input type="text" id="escName" placeholder="John Smith" required autocomplete="name"/>
+          </div>
+          <div class="form-group">
+            <label for="escEmail">Email Address *</label>
+            <input type="email" id="escEmail" placeholder="john@example.com" required autocomplete="email"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="escAccount">Account / Patient ID</label>
+          <input type="text" id="escAccount" placeholder="e.g. PAT-123456" autocomplete="off"/>
+        </div>
+        <div class="form-group">
+          <label for="escIssue">Describe your issue *</label>
+          <textarea id="escIssue" rows="3" placeholder="Please describe your issue in detail..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="escPriority">Priority Level</label>
+          <select id="escPriority">
+            <option value="normal">Normal</option>
+            <option value="urgent">Urgent</option>
+            <option value="critical">Critical — Medical Concern</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="modalCancelBtn">Cancel</button>
+          <button type="submit" class="btn-primary" id="submitEscalation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== TOAST NOTIFICATION ===== -->
+  <div class="toast hidden" id="toast" role="alert" aria-live="assertive">
+    <span class="toast-icon" id="toastIcon">✅</span>
+    <span id="toastMsg">Message</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
